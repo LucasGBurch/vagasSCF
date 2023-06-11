@@ -1,17 +1,23 @@
-var data =  require("./fakeData");
+var data = require('./fakeData');
 
-module.exports = function(req, res){
-  
-    var name =  req.body.name;
-    var jov =  req.body.job;
-    
-    var newUser = {
-        name: name,
-        job: job,
-    }
+const postUser = (req, res) => {
+  // dava pra criar uma chave um uuid, mas creio que não é esse o propósito do exercício:
+  let id = req.body.id;
 
-    data.push(newUser)
-    
-    res.send(newUser);
+  let name = req.body.name;
+  let job = req.body.job;
 
+  let newUser = {
+    id: id,
+    name: name,
+    job: job,
+  };
+
+  data.push(newUser);
+
+  res.send(newUser);
+};
+
+module.exports = {
+  postUser,
 };
