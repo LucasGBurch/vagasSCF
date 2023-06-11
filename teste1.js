@@ -1,4 +1,5 @@
-var data = require('./fakeData');
+let data = require('./fakeData');
+const { addAccess } = require('./teste5');
 
 const getUser = (req, res, next) => {
   // SOLUÇÃO ANTERIOR (ATENÇÃO: o getUser só funciona quando há mais de um objeto no array fakeData; ainda assim, só buscava o primeiro objeto com id 1)
@@ -14,6 +15,9 @@ const getUser = (req, res, next) => {
   let id = +req.params.id; // + para string -> number
   const position = data.findIndex((user) => user.id === id);
   res.send(data[position]);
+
+  // Complemento teste5:
+  app.use(addAccess);
 };
 
 const getUsers = (req, res, next) => {

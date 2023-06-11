@@ -1,4 +1,4 @@
-var data = require('./fakeData');
+let data = require('./fakeData');
 
 const postUser = (req, res) => {
   // dava pra criar uma chave um uuid, mas creio que não é esse o propósito do exercício:

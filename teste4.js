@@ -1,4 +1,4 @@
-var data = require('./fakeData');
+let data = require('./fakeData');
 
 const updateUser = (req, res) => {
   let id = +req.params.id;

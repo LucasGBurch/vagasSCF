@@ -1,4 +1,4 @@
-var data = require('./fakeData');
+let data = require('./fakeData');
 
 const deleteUser = (req, res) => {
   // SOLUÇÃO ANTERIOR (aqui estava deletando todo o array):

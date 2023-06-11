@@ -32,7 +32,7 @@ app.get('/users', teste1.getUsers);
 app.post('/users', teste2.postUser);
 app.delete('/users/:id', teste3.deleteUser);
 app.put('/users/:id', teste4.updateUser);
-app.get('/users/access', teste5);
+app.get('/users/access/:id', teste5.accessCount);
 
 const port = 3000;
 app.listen(port, function () {
