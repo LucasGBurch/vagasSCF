@@ -11,7 +11,7 @@ const deleteUser = (req, res) => {
 
   // Solução nova: buscando pela posição e deletando do array
   let id = +req.params.id;
-  const position = data.findIndex((usuario) => usuario.id === id);
+  const position = data.findIndex((user) => user.id === id);
   delete data[position];
 
   res.send(`Usuário de id ${id} deletado da base.`);

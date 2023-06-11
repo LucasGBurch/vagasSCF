@@ -12,7 +12,7 @@ const getUser = (req, res, next) => {
 
   // SOLUÇÃO NOVA: busca pelo id usando .findIndex() e params.id:
   let id = +req.params.id; // + para string -> number
-  const position = data.findIndex((usuario) => usuario.id === id);
+  const position = data.findIndex((user) => user.id === id);
   res.send(data[position]);
 };
 
