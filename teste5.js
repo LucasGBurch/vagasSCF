@@ -1,22 +1,13 @@
 let data = require('./fakeData');
 
-const accessCounter = 0;
-
-const addAccess = (next) => {
-  accessCounter += 1;
-  next();
-};
-
 const accessCount = (req, res) => {
   let id = +req.params.id;
-  const position = data.findIndex((user) => user.id === id);
+  let name = data[id - 1].name;
+  let access = data[id - 1].access;
 
-  let name = data[position].name;
-
-  res.send(`Usuário ${name} foi lido ${accessCounter} vezes.`);
+  res.send(`Usuário ${name} foi lido ${access} ${access == 1 ? 'vez.' : 'vezes.'}`);
 };
 
 module.exports = {
-  addAccess,
   accessCount,
 };

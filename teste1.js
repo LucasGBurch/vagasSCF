@@ -10,14 +10,14 @@ const getUser = (req, res, next) => {
   //         res.send(data[i]);
   //     }
   // }
-
-  // SOLUÇÃO NOVA: busca pelo id usando .findIndex() e params.id:
+  
+  // SOLUÇÃO NOVA: usei .findIndex() com params.id antes, mas simplifiquei a partir do teste5 para ficar enxuto.
   let id = +req.params.id; // + para string -> number
-  const position = data.findIndex((user) => user.id === id);
-  res.send(data[position]);
-
+  
   // Complemento teste5:
-  app.use(addAccess);
+  data[id - 1].access += 1;
+
+  res.send(data[id - 1]);
 };
 
 const getUsers = (req, res, next) => {
